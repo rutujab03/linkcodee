@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - GlowUp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>✨ GlowUp</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="skin-analysis.html" class="nav-link">Skin Analysis</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="login.html" class="nav-link active">Login</a></li>
+                    <li><a href="signup.html" class="nav-link">Sign Up</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 100px;">
+        <section class="login-section">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Welcome Back!</h2>
+                    <p style="text-align: center; margin-bottom: 2rem; color: #666;">Login to access your personalized skincare routine</p>
+                    
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required placeholder="Enter your password">
+                        </div>
+                        
+                        <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" name="remember" style="margin-right: 8px;">
+                                Remember me
+                            </label>
+                            <a href="#" style="color: #667eea; text-decoration: none;">Forgot Password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Login</button>
+                        
+                        <div style="text-align: center; margin: 2rem 0;">
+                            <p style="color: #666;">Or continue with</p>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                            <button type="button" class="btn btn-outline" style="flex: 1;">Google</button>
+                            <button type="button" class="btn btn-outline" style="flex: 1;">Facebook</button>
+                        </div>
+                        
+                        <p style="text-align: center; color: #666;">
+                            Don't have an account? <a href="signup.html" style="color: #667eea; text-decoration: none; font-weight: 600;">Sign Up</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GlowUp</h3>
+                    <p>Your personalized skincare companion for healthy, glowing skin.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="skin-analysis.html">Skin Analysis</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GlowUp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

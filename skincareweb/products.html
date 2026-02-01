@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - GlowUp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>✨ GlowUp</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="skin-analysis.html" class="nav-link">Skin Analysis</a></li>
+                    <li><a href="products.html" class="nav-link active">Products</a></li>
+                    <li><a href="login.html" class="nav-link">Login</a></li>
+                    <li><a href="signup.html" class="nav-link">Sign Up</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 100px;">
+        <section class="products-section">
+            <div class="container">
+                <div class="products-header">
+                    <h2>Curated Skincare Products</h2>
+                    <p>Handpicked products for every skin type and concern</p>
+                </div>
+
+                <div class="filter-section">
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <select id="skinTypeFilter" class="form-control" style="padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px;">
+                            <option value="">All Skin Types</option>
+                            <option value="oily">Oily</option>
+                            <option value="dry">Dry</option>
+                            <option value="combination">Combination</option>
+                            <option value="sensitive">Sensitive</option>
+                            <option value="normal">Normal</option>
+                        </select>
+                        
+                        <select id="concernFilter" class="form-control" style="padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px;">
+                            <option value="">All Concerns</option>
+                            <option value="acne">Acne</option>
+                            <option value="aging">Anti-Aging</option>
+                            <option value="hydration">Hydration</option>
+                            <option value="brightening">Brightening</option>
+                            <option value="sensitivity">Sensitivity</option>
+                        </select>
+                        
+                        <select id="priceFilter" class="form-control" style="padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px;">
+                            <option value="">All Prices</option>
+                            <option value="budget">Under $25</option>
+                            <option value="mid">$25-$50</option>
+                            <option value="premium">$50+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="productGrid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GlowUp</h3>
+                    <p>Your personalized skincare companion for healthy, glowing skin.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="skin-analysis.html">Skin Analysis</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GlowUp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

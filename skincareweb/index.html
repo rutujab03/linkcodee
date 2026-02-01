@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowUp - Your Skincare Companion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>✨ GlowUp</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="skin-analysis.html" class="nav-link">Skin Analysis</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="login.html" class="nav-link">Login</a></li>
+                    <li><a href="signup.html" class="nav-link">Sign Up</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Discover Your Perfect Skincare Routine</h2>
+                <p>Personalized solutions for your unique skin type and concerns</p>
+                <div class="hero-buttons">
+                    <a href="skin-analysis.html" class="btn btn-primary">Start Analysis</a>
+                    <a href="products.html" class="btn btn-secondary">Browse Products</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="skincare.jpg" alt="Skincare products arrangement">
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose GlowUp?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Skin Analysis</h3>
+                        <p>Get personalized recommendations based on your skin type and concerns</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>AI Chatbot</h3>
+                        <p>24/7 skincare advice from our intelligent assistant</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛍️</div>
+                        <h3>Curated Products</h3>
+                        <p>Handpicked skincare products for every need and budget</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Expert Tips</h3>
+                        <p>Learn from dermatologists and skincare specialists</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skin-types">
+            <div class="container">
+                <h2>Find Your Skin Type</h2>
+                <div class="skin-types-grid">
+                    <div class="skin-type-card">
+                        <img src="oily-skin.jpg" alt="Oily skin treatment products">
+                        <h3>Oily Skin</h3>
+                        <p>Excess sebum production, prone to acne and shine</p>
+                        <a href="skin-analysis.html?type=oily" class="btn btn-outline">Learn More</a>
+                    </div>
+                    <div class="skin-type-card">
+                        <img src="dry-skin.webp" alt="Dry skin hydration products">
+                        <h3>Dry Skin</h3>
+                        <p>Lacks moisture, feels tight and may flake</p>
+                        <a href="skin-analysis.html?type=dry" class="btn btn-outline">Learn More</a>
+                    </div>
+                    <div class="skin-type-card">
+                        <img src="combination-skin.jpg" alt="Combination skin care routine">
+                        <h3>Combination Skin</h3>
+                        <p>Oily T-zone, dry cheeks - needs balanced care</p>
+                        <a href="skin-analysis.html?type=combination" class="btn btn-outline">Learn More</a>
+                    </div>
+                    <div class="skin-type-card">
+                        <img src="sensitive_skin.webp" alt="Sensitive skin care products">
+                        <h3>Sensitive Skin</h3>
+                        <p>Easily irritated, needs gentle and soothing products</p>
+                        <a href="skin-analysis.html?type=sensitive" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GlowUp</h3>
+                    <p>Your personalized skincare companion for healthy, glowing skin.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="skin-analysis.html">Skin Analysis</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GlowUp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <span>💬</span>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h4>Skincare Assistant</h4>
+                <button class="close-btn" id="closeChatbot">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <p>Hello! I'm your skincare assistant. How can I help you today?</p>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Ask me about skincare...">
+                <button id="sendMessage">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Spotify Clone</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <div class="top-left">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" class="spotify-logo">
+    <div class="home-btn">🏠</div>
+
+    <div class="search-box">
+      🔍
+      <input type="text" placeholder="What do you want to play?" />
+    </div>
+  </div>
+
+  <div class="top-right">
+    <span id="premiumBtn">Premium</span>
+    <span id="supportBtn">Support</span>
+    <span id="downloadBtn">Download</span>
+    <span class="divider">|</span>
+    <span>Install App</span>
+    <span>Sign up</span>
+    <button class="login">Log in</button>
+  </div>
+</header>
+
+<!-- ================= PREMIUM PAGE ================= -->
+<section id="premiumPage" style="display:none;">
+
+  <div class="premium-hero">
+    <video autoplay muted loop playsinline>
+      <source src="images/songimg/spotify.webm" type="video/mp4">
+    </video>
+
+    <div class="premium-overlay">
+      <h1>The ultimate<br>home for<br>videos</h1>
+
+      <div class="premium-buttons">
+        <button class="green-btn">Try 3 months for ₹109</button>
+        <button class="outline-btn">View all plans</button>
+      </div>
+
+      <button class="back-home-btn">← Back to Home</button>
+    </div>
+  </div>
+
+  <section class="premium-features">
+
+  <div class="premium-heading">
+    <span class="premium-label">Premium Standard</span>
+    <h2>Made for fans who want more</h2>
+  </div>
+
+  <div class="features-row">
+
+    <div class="feature">
+      <div class="icon">🚫</div>
+      <h3>Ad-free music listening</h3>
+      <p>All the music, without all the ads. Just nonstop beats.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">📶</div>
+      <h3>Very high audio quality</h3>
+      <p>Dive deeper into music with sound quality up to ~320 kbps.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">⬇️</div>
+      <h3>Offline listening</h3>
+      <p>Download thousands of songs, or let Offline Backup do it for you.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">🔀</div>
+      <h3>Full control over what plays next</h3>
+      <p>Repeat songs, play albums in order, and skip as many times as you want.</p>
+    </div>
+
+  </div>
+
+  <div class="premium-buttons">
+    <button class="green-btn">Try 3 months for ₹109</button>
+    <button class="outline-btn">View all plans</button>
+  </div>
+
+  <p class="premium-note">
+    Premium Standard only. ₹109 for 3 months, then ₹199 per month after.
+    Offer only available if you haven’t tried Premium before. Terms apply.
+    Offer ends 20 January 2026.
+  </p>
+
+</section>
+
+
+  <!-- ===== 3 PREMIUM PLANS ===== -->
+  <div class="premium-plans">
+
+    <div class="plan">
+      <h3>Lite</h3>
+      <p>₹139 / month</p>
+      <ul>
+        <li>1 Lite account</li>
+        <li>High audio quality</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <button class="lite-btn">Get Premium Lite</button>
+    </div>
+
+    <div class="plan highlight">
+      <h3>Standard</h3>
+      <p>₹109 for 3 months</p>
+      <ul>
+        <li>1 Standard account</li>
+        <li>Download offline</li>
+        <li>Very high audio quality</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <button class="green-btn">Try 3 months for ₹109</button>
+    </div>
+
+    <div class="plan platinum">
+      <h3>Platinum</h3>
+      <p>₹299 / month</p>
+      <ul>
+        <li>Up to 3 accounts</li>
+        <li>Lossless audio</li>
+        <li>AI DJ</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <button class="yellow-btn">Get Premium Platinum</button>
+    </div>
+
+  </div>
+
+  <!-- ===== STUDENT PLAN (NOW CORRECT PLACE) ===== -->
+  <div class="student-plan-wrapper">
+    <div class="student-plan">
+
+      <span class="student-badge">Savings available</span>
+
+      <div class="student-header">
+        <span>Premium</span>
+        <h3>Student</h3>
+      </div>
+
+      <p class="student-price">₹99 for 2 months</p>
+      <p class="student-sub">₹99/month after</p>
+
+      <ul>
+        <li>1 verified Standard account</li>
+        <li>Download to listen offline</li>
+        <li>Very high audio quality (up to ~320kbps)</li>
+        <li>Cancel anytime</li>
+      </ul>
+
+      <button class="student-btn">Try 2 months for ₹99</button>
+
+      <p class="student-terms">
+        ₹99 for 2 months, then ₹99 per month after.
+        <br><br>
+        <a href="#">Terms and Conditions</a>
+      </p>
+
+    </div>
+  </div>
+
+<!-- ================= PREMIUM FOOTER ================= -->
+<footer class="premium-footer">
+
+  <div class="premium-footer-grid">
+
+    <!-- Logo -->
+    <div class="footer-brand">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg">
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h4>Company</h4>
+      <p>About</p>
+      <p>Jobs</p>
+      <p>For the Record</p>
+    </div>
+
+    <!-- Communities -->
+    <div>
+      <h4>Communities</h4>
+      <p>For Artists</p>
+      <p>Developers</p>
+      <p>Advertising</p>
+      <p>Investors</p>
+      <p>Vendors</p>
+    </div>
+
+    <!-- Useful Links -->
+    <div>
+      <h4>Useful links</h4>
+      <p>Support</p>
+      <p>Web Player</p>
+      <p>Free Mobile App</p>
+      <p>Import your music</p>
+    </div>
+
+    <!-- Plans -->
+    <div>
+      <h4>Spotify Plans</h4>
+      <p>Premium Lite</p>
+      <p>Premium Standard</p>
+      <p>Premium Platinum</p>
+      <p>Premium Student</p>
+      <p>Spotify Free</p>
+    </div>
+
+    <!-- Social -->
+   <div class="footer-social">
+
+  <!-- Instagram -->
+  <a class="social-icon" href="#">
+    <svg viewBox="0 0 24 24">
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5a4.5 4.5 0 1 0 0 9a4.5 4.5 0 0 0 0-9zm6.25-.75a1.25 1.25 0 1 0 0 2.5a1.25 1.25 0 0 0 0-2.5z"/>
+    </svg>
+  </a>
+
+  <!-- X / Twitter -->
+  <a class="social-icon" href="#">
+    <svg viewBox="0 0 24 24">
+      <path d="M3 3l7.5 9L3 21h3.5l5.2-6.4L16.5 21H21l-8-9.5L20.5 3H17l-4.6 5.6L8 3z"/>
+    </svg>
+  </a>
+
+  <!-- Facebook -->
+  <a class="social-icon" href="#">
+    <svg viewBox="0 0 24 24">
+      <path d="M13 3h4V0h-4a5 5 0 0 0-5 5v3H5v4h3v12h4V12h3.5l.5-4H12V5a1 1 0 0 1 1-1z"/>
+    </svg>
+  </a>
+
+</div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-links">
+      <span>Legal</span>
+      <span>Safety & Privacy Center</span>
+      <span>Privacy Policy</span>
+      <span>Cookies</span>
+      <span>About Ads</span>
+      <span>Accessibility</span>
+    </div>
+
+    <div class="footer-country">
+      🌐 India (English) <br>
+      © 2026 Spotify AB
+    </div>
+  </div>
+
+</footer>
+</section>
+
+<script>
+document.getElementById("premiumBtn").addEventListener("click", () => {
+  document.getElementById("premiumPage").style.display = "block";
+});
+</script>
+
+
+
+
+<!-- ================= SUPPORT PAGE ================= -->
+<section id="supportPage" style="display:none; width:100%; background:#121212;">
+
+  <div style="max-width:900px; margin:auto; padding:80px 20px;">
+
+    <!-- AI BOX -->
+    <div style="background:#1a1a1a; border-radius:12px; padding:20px; display:flex; align-items:center; justify-content:space-between;">
+      <div>
+        <h3 style="margin:0;">Get answers with AI <span style="font-size:12px; background:#333; padding:2px 6px; border-radius:6px;">BETA</span></h3>
+        <p style="color:#b3b3b3;">Ask a question or describe your issue to get quick answers.</p>
+      </div>
+      <button style="background:#1DB954; border:none; padding:10px 20px; border-radius:20px; font-weight:bold;">Let's go</button>
+    </div>
+
+    <!-- SEARCH -->
+    <h2 style="margin:50px 0 15px;">Search help articles</h2>
+    <input type="text" placeholder="Search"
+      style="width:100%; padding:14px; border-radius:6px; border:none; outline:none;">
+
+    <!-- CATEGORIES -->
+    <div style="margin-top:30px;">
+      <div class="support-item">Payments & billing</div>
+      <div class="support-item">Manage your account</div>
+      <div class="support-item">Premium plans</div>
+      <div class="support-item">In-app features</div>
+      <div class="support-item">Devices & troubleshooting</div>
+      <div class="support-item">Safety & privacy</div>
+    </div>
+
+    <!-- QUICK HELP -->
+    <h2 style="margin:60px 0 20px;">Quick help</h2>
+
+    <div class="quick-help">Spotify Wrapped</div>
+    <div class="quick-help">Can’t log in to Spotify</div>
+    <div class="quick-help">Failed payment help</div>
+    <div class="quick-help">Charged too much</div>
+    <div class="quick-help">Invite or remove Family plan members</div>
+    <div class="quick-help">How to change your payment details</div>
+
+    <button class="back-home-btn" style="margin-top:40px;">← Back to Home</button>
+
+  </div>
+
+  <!-- ================= COMMUNITY CTA ================= -->
+<div class="community-section">
+  <h1>Visit our Community</h1>
+  <p>Have questions? Find answers from our worldwide Community of expert fans!</p>
+  <button class="community-btn">Go to Community</button>
+</div>
+
+<!-- ================= SUPPORT FOOTER ================= -->
+<footer class="support-footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-logo">
+      <span>Spotify</span>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <p>About</p>
+      <p>Jobs</p>
+      <p>For the Record</p>
+    </div>
+
+    <div>
+      <h4>Communities</h4>
+      <p>For Artists</p>
+      <p>Developers</p>
+      <p>Advertising</p>
+      <p>Investors</p>
+      <p>Vendors</p>
+    </div>
+
+    <div>
+      <h4>Useful Links</h4>
+      <p>Support</p>
+      <p>Web Player</p>
+      <p>Free Mobile App</p>
+      <p>Contact Spotify</p>
+    </div>
+
+    <div>
+      <h4>Spotify Plans</h4>
+      <p>Premium Lite</p>
+      <p>Premium Standard</p>
+      <p>Premium Platinum</p>
+      <p>Premium Student</p>
+    </div>
+
+  </div>
+
+</footer>
+</section>
+
+<!-- ================= DOWNLOAD PAGE ================= -->
+<section id="downloadPage" style="display:none;">
+
+  <div class="download-hero">
+    <div class="download-overlay">
+      <h1>Download Spotify</h1>
+      <p>Play millions of songs and podcasts on your device.</p>
+
+     <button class="ms-store-btn">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+  <div class="ms-text">
+    <span>Download from the</span>
+    <strong>Microsoft Store</strong>
+  </div>
+</button>
+
+      <a href="#" class="direct-download">
+        Download directly from Spotify
+      </a>
+
+      <button class="back-home-btn">← Back to Home</button>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= SIGNUP PAGE ================= -->
+<section id="signupPage" style="display:none;" class="auth-page">
+
+  <div class="auth-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" class="auth-logo">
+
+    <h1>Sign up to<br>start listening</h1>
+
+    <label>Email address</label>
+    <input type="email" placeholder="name@domain.com">
+
+    <a class="auth-link">Use phone number instead.</a>
+
+    <button class="auth-green-btn">Next</button>
+
+    <div class="auth-divider">or</div>
+
+    <button class="auth-social google">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png">
+      Sign up with Google
+    </button>
+
+    <button class="auth-social apple">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg">
+      Sign up with Apple
+    </button>
+
+    <p class="auth-bottom">
+      Already have an account?
+      <span class="auth-switch" id="goLogin">Log in</span>
+    </p>
+
+    <button class="back-home-btn">← Back to Home</button>
+  </div>
+
+</section>
+
+
+<!-- ================= LOGIN PAGE ================= -->
+<section id="loginPage" style="display:none;" class="auth-page">
+
+  <div class="auth-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" class="auth-logo">
+
+    <h1>Welcome back</h1>
+
+    <label>Email or username</label>
+    <input type="text">
+
+    <button class="auth-green-btn">Continue</button>
+
+    <div class="auth-divider">or</div>
+
+    <button class="auth-social phone">📱 Continue with phone number</button>
+
+    <button class="auth-social google">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png">
+      Continue with Google
+    </button>
+
+    <button class="auth-social facebook">📘 Continue with Facebook</button>
+
+    <button class="auth-social apple">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg">
+      Continue with Apple
+    </button>
+
+    <p class="auth-bottom">
+      Don’t have an account?
+      <span class="auth-switch" id="goSignup">Sign up</span>
+    </p>
+
+    <button class="back-home-btn">← Back to Home</button>
+  </div>
+
+</section>
+
+
+
+<!-- ===== HOME LAYOUT ===== -->
+<div class="layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <h3>Your Library</h3>
+    <div class="playlist-box">
+      <h4>Create your first playlist</h4>
+      <p>It's easy, we help you</p>
+      <button>Create playlist</button>
+    </div>
+  </aside>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="content">
+
+<!-- ===== TRENDING SONGS ===== -->
+<section class="section">
+  <h2>Trending songs</h2>
+  <div class="horizontal-scroll">
+
+    <div class="card" onclick="playSong(0)">
+      <img src="images/songimg/laalbindi.jpg">
+      <h4>Laal Bindi</h4>
+      <p>Akull</p>
+    </div>
+
+    <div class="card" onclick="playSong(1)">
+      <img src="images/songimg/Badtameez Dil.webp">
+      <h4>Badtameez Dil</h4>
+      <p>Benny Dayal, Shefali Alvares</p>
+    </div>
+
+    <div class="card" onclick="playSong(2)">
+      <img src="images/songimg/borabora.avif">
+      <h4>Bora Bora</h4>
+      <p> Ayra Starr, AP Dhillon</p>
+    </div>
+
+    <div class="card" onclick="playSong(3)">
+      <img src="images/songimg/Gulabo-Lyrics.webp">
+      <h4>Gulaabo</h4>
+      <p>Anusha Mani, Vishal Dadlani</p>
+    </div>
+
+    <div class="card" onclick="playSong(4)">
+      <img src="images/songimg/Ishq Wala Love.jpg">
+      <h4>Ishq Wala Love</h4>
+      <p> Salim Merchant, Neeti Mohan, Shekhar Ravjiani</p>
+    </div>
+
+    <div class="card" onclick="playSong(5)">
+      <img src="images/songimg/PAYAL SONG.jpg">
+      <h4>Payal</h4>
+      <p> Yo Yo Honey Singh, Paradox</p>
+    </div>
+
+    <div class="card" onclick="playSong(6)">
+      <img src="images/songimg/Right Now Now.jpg">
+      <h4>Right Now Now</h4>
+      <p>Sunidhi Chauhan, Suzanne D'Mello, Wajid Ali</p>
+    </div>
+
+    <div class="card" onclick="playSong(7)">
+      <img src="images/songimg/humma.jpg">
+      <h4>The Humma Song</h4>
+      <p>Shashaa Tirupati, Jubin Nautiyal, A. R. Rahman, Badshah, Tanishk Bagchi</p>
+    </div>
+
+    <div class="card" onclick="playSong(8)">
+      <img src="images/songimg/zaalimaaa.jpg">
+      <h4>Zaalima</h4>
+      <p> Harshdeep Kaur, Arijit Singh</p>
+    </div>
+
+    <div class="card" onclick="playSong(9)">
+      <img src="images/songimg/chashni.jpg">
+      <h4>Chashni</h4>
+      <p> Abhijeet Srivastava, Vishal–Shekhar</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== POPULAR ARTISTS ===== -->
+<section class="section">
+  <h2>Popular artists</h2>
+  <div class="horizontal-scroll">
+
+    <div class="artist">
+      <img src="images/artists/arijit.avif">
+      <p>Arijit Singh</p>
+    </div>
+
+    <div class="artist">
+      <img src="images/artists/lanadelrey.jpg">
+      <p>Lana Del Rey</p>
+    </div>
+
+    <div class="artist">
+      <img src="images/artists/atif.jpg">
+      <p>Atif Aslam</p>
+    </div>
+
+    <div class="artist">
+      <img src="images/artists/theweek.jpg">
+      <p>The Weekend</p>
+    </div>
+
+    <div class="artist">
+      <img src="images/artists/shreyaghosha.webp">
+      <p>Shreya Ghoshal</p>
+    </div>
+
+    <div class="artist">
+      <img src="images/artists/apdhillon.jpg">
+      <p>AP Dhillon</p>
+    </div>
+
+    <div class="artist">
+      <img src="images/artists/sabrina.jpg">
+      <p>Sabrina Carpenter</p>
+    </div>
+
+    <div class="artist">
+      <img src="images/artists/Yo-Yo-Honey-SIngh.webp">
+      <p>Yo Yo Honey Singh</p>
+    </div>
+
+    <div class="artist">
+      <img src="images/artists/djo.jpg">
+      <p>Djo</p>
+    </div>
+
+    <div class="artist">
+      <img src="images/artists/pritam.jpg">
+      <p>Pritam</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== POPULAR ALBUMS ===== -->
+<section class="section">
+  <h2>Popular albums</h2>
+  <div class="horizontal-scroll">
+
+    <div class="card"><img src="images/albums/aashiqui.jpg"><p>Aashiqui 2</p></div>
+    <div class="card"><img src="images/albums/yeh-jawaani-hai-deewan.jpg"><p>YJHD</p></div>
+    <div class="card"><img src="images/albums/sanamteri.jpg"><p>Sanam Teri Kasam</p></div>
+    <div class="card"><img src="images/albums/AnimalCover.jpg"><p>Animal</p></div>
+    <div class="card"><img src="images/albums/positions.png"><p>Positions</p></div>
+    <div class="card"><img src="images/albums/kyabathai.jpg"><p>Kya Baat Hai</p></div>
+    <div class="card"><img src="images/albums/Sweet_-_Sabrina_Carpenter.png"><p>Sweet Sour</p></div>
+    <div class="card"><img src="images/albums/glory.jpg"><p>Glory</p></div>
+    <div class="card"><img src="images/albums/starboy.jpg"><p>Starboy</p></div>
+    <div class="card"><img src="images/albums/arpitbala.jpg"><p>Ik Kuddi</p></div>
+
+  </div>
+</section>
+
+</main>
+</div>
+
+<!-- ================= PLAYER ================= -->
+<footer class="player">
+  <button onclick="prevSong()">⏮</button>
+  <button onclick="togglePlay()">⏯</button>
+  <button onclick="nextSong()">⏭</button>
+  <span id="nowPlaying">No song playing</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

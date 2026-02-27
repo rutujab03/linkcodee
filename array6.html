@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Info</title>
+</head>
+
+<body>
+
+<h2>Student Info</h2>
+
+<form onsubmit="return false;">
+  <input type="text" id="name" placeholder="enter name" />
+  <input type="text" id="sub" placeholder="enter subject" />
+  <input type="text" id="marks" placeholder="enter marks" />
+  <br><br>
+
+  <button type="button" onclick="addData()">Submit</button>
+  <button type="reset">Reset</button>
+  <button type="button" onclick="show()">Show</button>
+
+  <br><br>
+
+  <table border="1" style="display:none;" id="table">
+    <thead>
+      <tr>
+        <th>Sr No</th>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Marks</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</form>
+
+<script>
+let data = [];
+
+function addData() {
+  let name = document.getElementById("name").value;
+  let sub = document.getElementById("sub").value;
+  let marks = document.getElementById("marks").value;
+
+  data.push({
+    name: name,
+    sub: sub,
+    marks: marks
+  });
+
+  document.getElementById("name").value = "";
+  document.getElementById("sub").value = "";
+  document.getElementById("marks").value = "";
+}
+
+function show() {
+  let op = document.getElementById("tbody");
+  op.innerHTML = "";
+
+  for (let i = 0; i < data.length; i++) {
+    op.innerHTML +=
+      "<tr>" +
+        "<td>" + (i + 1) + "</td>" +
+        "<td>" + data[i].name + "</td>" +
+        "<td>" + data[i].sub + "</td>" +
+        "<td>" + data[i].marks + "</td>" +
+      "</tr>";
+  }
+
+  document.getElementById("table").style.display = "block";
+}
+</script>
+
+</body>
+</html>

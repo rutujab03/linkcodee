@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h1>Student Info <h1>
+            <input type="text" id="item" placeholder="enter name">
+            <button onclick="addstudent()">Add Student</button>
+            <p id="list"></p>
+      <script>
+        let students=[];
+       function addstudent(){
+        let val=document.getElementById("item").value;
+        students.push(val);
+        document.getElementById("list").innerText=students.join("");
+      }
+    </script>
+</body>
+</html>

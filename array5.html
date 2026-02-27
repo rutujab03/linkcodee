@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 20px;
+  }
+
+  th {
+    padding: 10px;
+  }
+
+  td {
+    padding: 8px;
+    text-align: center;
+  }
+
+  table, th, td {
+    border: 1px solid ;
+  }
+
+  button {
+    padding: 6px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+
+<input id="name" placeholder="Name"><br><br>
+<input id="marks" placeholder="Marks"><br><br>
+<input id="subject" placeholder="Subject"><br><br>
+
+<button onclick="check()">Check</button>
+<button onclick="resetData()">Reset</button>
+<button>Submit</button>
+
+<table id="table" style="display:none;">
+  <tr>
+    <th>Name</th>
+    <th>Marks</th>
+    <th>Subject</th>
+  </tr>
+  <tr>
+    <td id="tname"></td>
+    <td id="tmarks"></td>
+    <td id="tsubject"></td>
+  </tr>
+</table>
+
+<script>
+function check() {
+  document.getElementById("table").style.display = "table";
+  document.getElementById("tname").innerHTML =
+    document.getElementById("name").value;
+  document.getElementById("tmarks").innerHTML =
+    document.getElementById("marks").value;
+  document.getElementById("tsubject").innerHTML =
+    document.getElementById("subject").value;
+}
+
+function resetData() {
+  document.getElementById("name").value = "";
+  document.getElementById("marks").value = "";
+  document.getElementById("subject").value = "";
+  document.getElementById("table").style.display = "none";
+}
+</script>
+
+</body>
+</html>

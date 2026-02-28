@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Theme Change</title>
+<style>
+  body {
+    font-family: Arial;
+    padding: 40px;
+    transition: 0.3s;
+  }
+  .dark {
+    background: #222;
+    color: white;
+  }
+  .light {
+    background: #f5f5f5;
+    color: black;
+  }
+</style>
+</head>
+
+<body class="dark">
+
+<h2>Theme Change Using Event</h2>
+<button id="themeBtn">Change Theme</button>
+
+<script>
+  var btn = document.getElementById("themeBtn");
+
+  btn.addEventListener("click", function () {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  });
+</script>
+
+</body>
+</html>

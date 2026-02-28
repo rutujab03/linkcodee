@@ -2,31 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Array Operations</title>
 </head>
 <body>
-    <script>
-        let a=[4,7,5];
-        console.log(a[2])
-        console.log(a.length)
-        for(i=0;i<a.length;i++){
-            console.log(a[i])
-        }
-        a.push(8)
-         for(i=0;i<a.length;i++){
-            console.log(a[i])
-        }
-        a.unshift(9)
-         for(i=0;i<a.length;i++){
-            console.log(a[i])
-        }
-        console.log(a.length)
-         a.pop()
-         console.log(a[4])
-         a.shift()
-         console.log(a[0])
 
-    </script>
+<script>
+
+    // Creating an array
+    let a = [4, 7, 5];
+
+    console.log("Initial Array:", a);
+
+    // Accessing element
+    console.log("Element at index 2:", a[2]);
+
+    // Length of array
+    console.log("Length:", a.length);
+
+    // Loop through array
+    console.log("Printing array elements:");
+    for (let i = 0; i < a.length; i++) {
+        console.log(a[i]);
+    }
+
+    // Push (Add element at end)
+    a.push(8);
+    console.log("After push(8):", a);
+
+    for (let i = 0; i < a.length; i++) {
+        console.log(a[i]);
+    }
+
+    // Unshift (Add element at beginning)
+    a.unshift(9);
+    console.log("After unshift(9):", a);
+
+    for (let i = 0; i < a.length; i++) {
+        console.log(a[i]);
+    }
+
+    // Length after updates
+    console.log("Updated Length:", a.length);
+
+    // Pop (Remove last element)
+    a.pop();
+    console.log("After pop():", a);
+
+    console.log("Element at index 4:", a[4]); // undefined (index doesn't exist)
+
+    // Shift (Remove first element)
+    a.shift();
+    console.log("After shift():", a);
+
+    console.log("First Element:", a[0]);
+
+</script>
+
 </body>
 </html>

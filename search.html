@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Filter App</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f9;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    /* Filters */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input, select, button {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+
+    /* Products */
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Product Search & Filters</h1>
+
+  <div class="filters">
+    <input type="text" id="searchInput" placeholder="Search product">
+
+    <select id="productFilter">
+      <option value="">All Products</option>
+      <option value="mobile">Mobile</option>
+      <option value="speaker">Speaker</option>
+      <option value="speakers">Speakers</option>
+      <option value="watch">Watch</option>
+      <option value="earphone">EarPhone</option>
+      <option value="airpods">Airpods</option>
+      <option value="headphone">Headphone</option>
+      <option value="wired headphone">Wired Headphone</option>
+    </select>
+
+    <select id="priceFilter">
+      <option value="">All Prices</option>
+      <option value="0-5000">Below ₹5k</option>
+      <option value="5000-10000">₹5k–10k</option>
+      <option value="10000-20000">₹10k–20k</option>
+      <option value="20000-30000">₹20k–30k</option>
+      <option value="30000-100000">Above ₹30k</option>
+    </select>
+
+    <button onclick="applyFilters()">Apply</button>
+    <button onclick="resetFilters()">Reset</button>
+  </div>
+
+  <div id="productcontainer" class="product-container"></div>
+
+  <script>
+    const container = document.getElementById("productcontainer");
+
+    const products = [
+      { price: 69999, pname: "Mobile", des: "OnePlus 15", image: "https://m.media-amazon.com/images/G/31/img23/Wireless/OnePlus/CLP/2026/Feb/OnePlus_15_17.png" },
+      { price: 19999, pname: "Mobile", des: "iQZ10R", image: "https://m.media-amazon.com/images/G/31/img24/Wireless/jkknnet/1synov/iQZ10R_580x740.png" },
+      { price: 13499, pname: "Mobile", des: "Samsung Galaxy M17 5G", image: "https://m.media-amazon.com/images/G/31/img23/Wireless/shagun/fold/Galaxy_M17__580x740.png" },
+      { price: 32499, pname: "Mobile", des: "OnePlus Nord 5", image: "https://m.media-amazon.com/images/G/31/img23/Wireless/OnePlus/CLP/2026/Jan/6thJan/nord_5_13.png" },
+      { price: 10999, pname: "Mobile", des: "realme NARZO 80 Lite 5G", image: "https://m.media-amazon.com/images/G/31/img24/Wireless/vinambia/realmefeb4/NARZO_80_Lite_6.png" },
+      { price: 16000, pname: "Mobile", des: "REDMI Note 15 Pro+5G", image: "https://m.media-amazon.com/images/G/31/img23/Wireless/Isha/Xiaomi/ProPlusSale/REDMI_Note_15_Pro.png" },
+      { price: 21000, pname: "Speaker", des: "OnePlus", image: "https://m.media-amazon.com/images/I/81lGxS2ZisL._AC_UL320_.jpg" },
+      { price: 22000, pname: "Speakers", des: "XiXi Multimedia", image: "https://m.media-amazon.com/images/G/31/img21/Audio/AugART/speakers-SBC/Multimda_spkr.jpg" },
+      { price: 7000, pname: "Watch", des: "Vivo", image: "https://m.media-amazon.com/images/I/41uYSN1XJbL._AC_SR480,440_.jpg" },
+      { price: 6000, pname: "EarPhone", des: "OnePlus Boat", image: "https://m.media-amazon.com/images/I/61B5hIAmvdL._AC_UL320_.jpg" },
+      { price: 8000, pname: "Airpods", des: "OnePlus Boat", image: "https://m.media-amazon.com/images/I/512jrg8-68L._AC_UL320_.jpg" },
+      { price: 1000, pname: "Wired Headphone", des: "Vivo", image: "https://m.media-amazon.com/images/I/51GGwjwSr0L._AC_UL320_.jpg" },
+      { price: 15500, pname: "Headphone", des: "HP", image: "https://m.media-amazon.com/images/I/31rO8ifdICL._AC_SR480,440_.jpg" }
+    ];
+
+    function display(list) {
+      container.innerHTML = "";
+      list.forEach(p => {
+        const div = document.createElement("div");
+        div.className = "product";
+        div.innerHTML = `
+          <img src="${p.image}">
+          <h3>${p.pname}</h3>
+          <p>${p.des}</p>
+          <div class="price">₹${p.price}</div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function applyFilters() {
+      const search = document.getElementById("searchInput").value.toLowerCase();
+      const product = document.getElementById("productFilter").value;
+      const priceVal = document.getElementById("priceFilter").value;
+
+      const filtered = products.filter(p => {
+        const matchSearch =
+          p.pname.toLowerCase().includes(search) ||
+          p.des.toLowerCase().includes(search);
+
+        const matchProduct =
+          product === "" || p.pname.toLowerCase() === product;
+
+        let matchPrice = true;
+        if (priceVal) {
+          const [min, max] = priceVal.split("-").map(Number);
+          matchPrice = p.price >= min && p.price <= max;
+        }
+
+        return matchSearch && matchProduct && matchPrice;
+      });
+
+      display(filtered);
+    }
+
+    function resetFilters() {
+      document.getElementById("searchInput").value = "";
+      document.getElementById("productFilter").value = "";
+      document.getElementById("priceFilter").value = "";
+      display(products);
+    }
+
+    display(products);
+  </script>
+
+</body>
+</html>
